@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta content="Users" name="description">
+        <meta content="Users" name="keywords">
+        <title>Users</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" id="google-fonts-css"  href="https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C600%2C600%2C800&#038;ver=1.0.0#038;subset=latin%2Clatin-ext" media="all" />
+        <link href="template/css/reset.css" media="all" type="text/css" rel="stylesheet">
+        <link href="template/css/styles.css" media="all" type="text/css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    </head>
+	<body>
+		<div id="page">
+			<h1>Users</h1>
+			<div id="menu">
+				<div>
+					<form name="search" id="live-search">
+						<input type="text" name="Keywords" placeholder="Search users" id="filter">
+					</form>
+					<script>
+						$(document).ready(function(){
+						$("#filter").keyup(function(){
+							var filter = $(this).val(), count = 0;
+							var regex = new RegExp(filter, "i");
+							$(".grid .item").each(function(){
+								if ($(this).text().search(regex) < 0) $(this).hide();
+								else {
+									$(this).show();
+									count++;
+								}
+								});
+							});
+						});
+					</script>  			
+				</div>
+				<div align="right">
+					<a href="#">Reputation</a>
+					<a href="#" class="selected">New users</a>
+					<a href="#">Voters</a>
+					<a href="#">Editors</a>
+					<a href="#">Moderators</a>
+				</div>
+			</div>
+			<br>
+			<div class="grid">
+			  <div class="item">
+				  <img src="template/images/peeps_01.jpg" alt="">
+				  <p class="fullName">Leah Nichols</p>
+				  <p class="location">Troy, MI</p>
+				  <span>chlotes</span><span>stem</span>
+			  </div>
+			  <div class="item">
+				  <img src="template/images/peeps_02.jpg" alt="">
+				  <p class="fullName">Jesus Weiss</p>
+				  <p class="location">Fort Worth, TX</p>
+				  <span>headset</span><span>stem</span><span>gadget</span><span>winter</span>
+			  </div>
+			  <div class="item">
+				  <img src="template/images/peeps_03.jpg" alt="">
+				  <p class="fullName">Annie Rice</p>
+				  <p class="location">Austin, TX</p>
+				  <span>road</span><span>mountain</span><span>trip</span><span>earth</span><span>nature</span>
+			  </div>
+			  <div class="item">
+				  <img src="template/images/peeps_04.jpg" alt="">
+				  <p class="fullName">Robert Brower</p>
+				  <p class="location">Cincinnati, OH</p>
+				  <span>maintenance</span><span>gears</span><span>frames</span><span>repair</span>
+			  </div>
+			  <div class="item">
+				  <img src="template/images/peeps_06.jpg" alt="">
+				  <p class="fullName">Amy Campbell</p>
+				  <p class="location">Warrior, AL</p>
+				  <span>music</span><span>disks</span>
+			  </div>
+			  <div class="item">
+				  <img src="template/images/peeps_05.jpg" alt="">
+				  <p class="fullName">Anthony S. Morin</p>
+				  <p class="location">Lyndhurst, NJ</p>
+				  <span>vintage</span><span>electric</span>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>
